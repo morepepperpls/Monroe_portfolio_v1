@@ -3250,10 +3250,14 @@ button {
   }
 
   .logo-hublot span {
+    display: block;
     max-width: 88%;
     font-size: 0.62rem;
+    line-height: 1;
     letter-spacing: 0.03em;
+    text-align: center;
     transform: scaleX(0.96);
+    transform-origin: center;
   }
 
   .experience-title-row .item-title {
@@ -3298,6 +3302,11 @@ button {
     font-size: 0.9rem;
   }
 
+  .experience-folder {
+    justify-self: stretch;
+    width: 100%;
+  }
+
   .experience-media-slot-large,
   .experience-media-slot-tall {
     min-height: 220px;
@@ -3309,24 +3318,60 @@ button {
   }
 
   .experience-folder-shell {
-    width: min(238px, 100%);
-    min-height: 126px;
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    min-height: 0;
+    padding: 6px max(4px, calc((100% - min(72vw, 230px)) / 2)) 18px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .experience-folder-shell::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .experience-folder-shell::-webkit-scrollbar-thumb {
+    background: rgba(18, 18, 18, 0.16);
+    border-radius: 999px;
   }
 
   .experience-folder-card {
-    width: 116px;
+    position: relative;
+    top: auto;
+    right: auto;
+    flex: 0 0 min(72vw, 230px);
+    width: auto;
+    scroll-snap-align: center;
+    transform: none;
+    border-radius: 16px;
   }
 
   .experience-folder-card-1 {
-    transform: translate(0, 18px) rotate(2deg);
+    order: 1;
+    transform: none;
   }
 
   .experience-folder-card-2 {
-    transform: translate(-12px, 12px) rotate(-4deg);
+    order: 2;
+    transform: none;
   }
 
   .experience-folder-card-3 {
-    transform: translate(-24px, 6px) rotate(3deg);
+    order: 3;
+    transform: none;
+  }
+
+  .experience-folder-card-4 {
+    order: 4;
+    transform: none;
+  }
+
+  .experience-folder-shell:hover .experience-folder-card,
+  .experience-folder-shell:focus-within .experience-folder-card {
+    transform: none;
   }
 
   .contact-row {
