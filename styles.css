@@ -3229,31 +3229,35 @@ button {
 
   .experience-summary {
     padding: 6px 0 16px;
+    font-size: 0.94rem;
   }
 
   .experience-summary-main {
-    grid-template-columns: 50px minmax(0, 1fr);
+    grid-template-columns: 52px minmax(0, 1fr);
     gap: 12px;
   }
 
   .experience-logo {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.92rem;
   }
 
   .logo-hublot,
   .logo-panerai {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
   }
 
   .logo-hublot span {
-    font-size: 0.82rem;
+    max-width: 88%;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    transform: scaleX(0.96);
   }
 
   .experience-title-row .item-title {
-    font-size: var(--type-heading-3);
+    font-size: clamp(1.15rem, 5vw, 1.38rem);
   }
 
   .experience-title-row,
@@ -3264,13 +3268,13 @@ button {
   .experience-pill {
     min-height: 28px;
     padding: 0 10px;
-    font-size: var(--type-label);
+    font-size: 0.66rem;
   }
 
   .experience-location,
   .experience-date,
   .role-line {
-    font-size: var(--type-body);
+    font-size: 0.95rem;
   }
 
   .experience-toggle {
@@ -3281,12 +3285,17 @@ button {
   .experience-bullets {
     padding-left: 20px;
     gap: 12px;
+    font-size: 0.98rem;
   }
 
   .experience-details-inner {
     margin-top: 14px;
     padding: 18px;
     border-radius: 22px;
+  }
+
+  .experience-tags span {
+    font-size: 0.9rem;
   }
 
   .experience-media-slot-large,
