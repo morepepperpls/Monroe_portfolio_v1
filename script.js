@@ -24,6 +24,14 @@ const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
 
 const updateTopbar = () => {
   const landing = document.querySelector("#landing");
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+  if (isMobile) {
+    topbar.classList.add("scrolled");
+    topbar.classList.remove("topbar-hidden");
+    return;
+  }
+
   const threshold = landing ? landing.offsetHeight * 0.45 : 18;
   const scrolled = window.scrollY > threshold;
   topbar.classList.toggle("scrolled", scrolled);
@@ -285,6 +293,7 @@ window.addEventListener("resize", () => {
     menuToggle?.setAttribute("aria-expanded", "false");
   }
 
+  updateTopbar();
   updateSectionMotion();
 });
 
