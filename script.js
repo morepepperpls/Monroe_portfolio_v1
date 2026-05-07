@@ -23,19 +23,9 @@ const lightboxCloseTargets = document.querySelectorAll("[data-lightbox-close]");
 const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
 
 const updateTopbar = () => {
-  const landing = document.querySelector("#landing");
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
-  if (isMobile) {
-    topbar.classList.add("scrolled");
-    topbar.classList.remove("topbar-hidden");
-    return;
-  }
-
-  const threshold = landing ? landing.offsetHeight * 0.45 : 18;
-  const scrolled = window.scrollY > threshold;
+  const scrolled = window.scrollY > 8;
   topbar.classList.toggle("scrolled", scrolled);
-  topbar.classList.toggle("topbar-hidden", !scrolled);
+  topbar.classList.remove("topbar-hidden");
 };
 
 const updateProgress = () => {
