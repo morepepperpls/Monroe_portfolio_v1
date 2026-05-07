@@ -414,7 +414,7 @@ button {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transform: translateX(-50%);
-  animation: topbarEnter 720ms var(--ease) 120ms both;
+  animation: topbarEnter 1180ms var(--ease) 220ms both;
   transition:
     opacity 480ms var(--ease),
     transform 520ms var(--ease),
